@@ -6,7 +6,7 @@ export default function Header() {
   return (
     <Box
       as="header"
-      p="5"
+      p="3"
       color="white"
       style={{
         backgroundImage:

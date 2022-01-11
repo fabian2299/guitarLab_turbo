@@ -1,4 +1,4 @@
-import { Box } from '@chakra-ui/react'
+import { Box, Heading } from '@chakra-ui/react'
 import type { NextPage } from 'next'
 import Head from 'next/head'
 
@@ -8,7 +8,10 @@ const Home: NextPage = () => {
       <Head>
         <title>GuitarLab - Inicio</title>
       </Head>
-      <h1>Desde Inicio</h1>
+
+      <Heading as="h2" color="orange.400" textAlign="center">
+        Incio
+      </Heading>
     </Box>
   )
 }

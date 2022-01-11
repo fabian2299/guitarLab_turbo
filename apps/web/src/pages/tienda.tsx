@@ -1,7 +1,16 @@
+import { Box, Heading } from '@chakra-ui/react'
+import Head from 'next/head'
+
 export default function Tienda() {
   return (
-    <div>
-      <h1>tienda</h1>
-    </div>
+    <Box as="main">
+      <Head>
+        <title>GuitarLab - Tienda</title>
+      </Head>
+
+      <Heading as="h2" color="orange.400" textAlign="center">
+        Tienda
+      </Heading>
+    </Box>
   )
 }

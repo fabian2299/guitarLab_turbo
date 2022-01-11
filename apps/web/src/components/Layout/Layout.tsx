@@ -10,7 +10,7 @@ export default function Layout({ children }: { children: ReactNode }) {
         <meta name="description" content="Pagina web de ventas de guitarras" />
       </Head>
       <Header />
-      <main className="container mx-auto min-h-[90vh] p-5">{children}</main>
+      <main className="container mx-auto min-h-[90vh] p-8">{children}</main>
       <Footer />
     </div>
   )

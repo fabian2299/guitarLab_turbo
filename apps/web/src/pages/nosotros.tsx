@@ -4,7 +4,7 @@ import Image from 'next/image'
 
 export default function Nosotros() {
   return (
-    <Box as="main" my="10">
+    <Box as="main">
       <Head>
         <title>GuitarLab - Nosotros</title>
       </Head>
