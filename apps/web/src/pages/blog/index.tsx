@@ -4,7 +4,9 @@ import { Box, Heading, SimpleGrid } from '@chakra-ui/react'
 import { Post } from 'src/components'
 
 export const getStaticProps: GetStaticProps = async () => {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/blogs?populate=imagen`)
+  const res = await fetch(
+    `${process.env.NEXT_PUBLIC_API_URL}/api/blogs?populate=imagen&sort=createdAt:desc`,
+  )
   const data = await res.json()
 
   return {

@@ -1,5 +1,6 @@
 import { Box, Heading, Text, VStack } from '@chakra-ui/react'
 import type { GetStaticPaths, GetStaticProps } from 'next'
+import Head from 'next/head'
 import Image from 'next/image'
 import { formatearFecha } from 'src/lib'
 
@@ -31,6 +32,10 @@ export default function PostDetailsPage({ post }: any) {
 
   return (
     <Box>
+      <Head>
+        <title>{`GuitarLab - ${titulo}`}</title>
+      </Head>
+
       <Heading as="h2" color="orange.400" textAlign="center">
         {titulo}
       </Heading>
