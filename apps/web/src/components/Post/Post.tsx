@@ -4,8 +4,7 @@ import Link from 'next/link'
 import { formatearFecha } from 'src/lib'
 
 export default function Post({ post }: any) {
-  const { titulo, resumen, imagen, publishedAt } = post.attributes
-  const { id } = post
+  const { titulo, resumen, imagen, publishedAt, slug } = post.attributes
   return (
     <article className="hover:scale-105 transition-all duration-300 ease-in-out  rounded-xl overflow-hidden border border-gray-400">
       <Image
@@ -25,7 +24,7 @@ export default function Post({ post }: any) {
           {formatearFecha(publishedAt)}
         </Text>
         <Text noOfLines={2}>{resumen}</Text>
-        <Link href={`/blog/${id}`} passHref>
+        <Link href={`/blog/${slug}`} passHref>
           <Button colorScheme="orange">Leer Entrada</Button>
         </Link>
       </VStack>

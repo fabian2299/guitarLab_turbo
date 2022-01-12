@@ -14,8 +14,6 @@ export const getStaticProps: GetStaticProps = async () => {
 }
 
 export default function Blog({ data }: any) {
-  console.log(data)
-
   return (
     <Box>
       <Head>
