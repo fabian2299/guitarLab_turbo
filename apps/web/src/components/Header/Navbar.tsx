@@ -4,7 +4,7 @@ import { links } from 'src/lib/links'
 
 export default function Navbar() {
   return (
-    <nav>
+    <nav className="relative z-50">
       <HStack spacing="10">
         {links.map(link => (
           <Box key={link.id}>
