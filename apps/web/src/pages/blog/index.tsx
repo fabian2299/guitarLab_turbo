@@ -1,23 +1,23 @@
 import Head from 'next/head'
 import type { GetStaticProps } from 'next'
-import { Box, Heading, SimpleGrid } from '@chakra-ui/react'
-import { Post } from 'src/components'
+import { Box, Heading } from '@chakra-ui/react'
+import Posts from 'src/components/Post/Posts'
 
 export const getStaticProps: GetStaticProps = async () => {
   const res = await fetch(
     `${process.env.NEXT_PUBLIC_API_URL}/api/blogs?populate=imagen&sort=createdAt:desc`,
   )
-  const data = await res.json()
+  const posts = await res.json()
 
   return {
-    props: { data },
+    props: { posts: posts.data },
     revalidate: 60,
   }
 }
 
-export default function Blog({ data }: any) {
+export default function Blog({ posts }: any) {
   return (
-    <Box>
+    <Box as="main">
       <Head>
         <title>GuitarLab - Blog</title>
       </Head>
@@ -26,11 +26,7 @@ export default function Blog({ data }: any) {
         Blog
       </Heading>
 
-      <SimpleGrid columns={[1, 2, null, 3]} gap="10" mt="8">
-        {data.data.map((post: any) => (
-          <Post key={post.id} post={post} />
-        ))}
-      </SimpleGrid>
+      <Posts posts={posts} />
     </Box>
   )
 }

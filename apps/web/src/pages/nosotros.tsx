@@ -13,7 +13,7 @@ export default function Nosotros() {
         Nosotros
       </Heading>
 
-      <SimpleGrid columns={[1, 2]} spacing={10} alignItems="center" justify="center" mt="8">
+      <SimpleGrid columns={[1, 2]} spacing={10} alignItems="start" justify="center" p="8">
         <Image
           src="/images/nosotros.jpg"
           alt="imagen sobre nosotros"

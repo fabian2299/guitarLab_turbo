@@ -46,7 +46,7 @@ export default function GuitarraDetailsPage({ guitarra }: any) {
         <title>{`GuitarLab - ${slug}`}</title>
       </Head>
 
-      <SimpleGrid columns={2} spacing={10} alignItems="center" justify="center" mt="8" h="xl">
+      <SimpleGrid columns={2} spacing={10} alignItems="center" justify="center" p="8" h="xl">
         <VStack pos="relative" h="full">
           <Image src={imagen.data.attributes.url} alt={nombre} layout="fill" objectFit="contain" />
         </VStack>
