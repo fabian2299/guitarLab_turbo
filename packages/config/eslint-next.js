@@ -39,5 +39,14 @@ module.exports = {
       },
     },
   ],
-  ignorePatterns: ['**/*.js', '**/*.json', 'node_modules', '.turbo', '.next', 'public', 'coverage'],
+  ignorePatterns: [
+    '**/*.js',
+    '**/*.json',
+    'node_modules',
+    '.turbo',
+    '.next',
+    'public',
+    'coverage',
+    'next.config.js',
+  ],
 }

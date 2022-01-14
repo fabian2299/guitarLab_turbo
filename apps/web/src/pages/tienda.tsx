@@ -5,7 +5,7 @@ import { Guitarras } from 'src/components'
 
 export const getServerSideProps: GetServerSideProps = async () => {
   const res = await fetch(
-    `${process.env.NEXT_PUBLIC_API_URL}/api/guitarras?populate=imagen&sort=createdAt:desc`,
+    `${process.env.apiEndpoint}/api/guitarras?populate=imagen&sort=createdAt:desc`,
   )
   const data = await res.json()
 

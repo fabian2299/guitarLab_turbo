@@ -18,7 +18,7 @@ import { useState } from 'react'
 export const getServerSideProps: GetServerSideProps = async ({ query }) => {
   const { slug } = query
   const res = await fetch(
-    `${process.env.NEXT_PUBLIC_API_URL}/api/guitarras?filters[slug]=${slug}&populate=imagen`,
+    `${process.env.apiEndpoint}/api/guitarras?filters[slug]=${slug}&populate=imagen`,
   )
   const data = await res.json()
 

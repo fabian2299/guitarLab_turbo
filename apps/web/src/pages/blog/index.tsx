@@ -5,7 +5,7 @@ import Posts from 'src/components/Post/Posts'
 
 export const getStaticProps: GetStaticProps = async () => {
   const res = await fetch(
-    `${process.env.NEXT_PUBLIC_API_URL}/api/blogs?populate=imagen&sort=createdAt:desc`,
+    `${process.env.apiEndpoint}/api/blogs?populate=imagen&sort=createdAt:desc`,
   )
   const posts = await res.json()
 

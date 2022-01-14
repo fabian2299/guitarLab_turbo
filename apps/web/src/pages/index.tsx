@@ -6,9 +6,9 @@ import { Curso, Guitarras } from 'src/components'
 import Posts from 'src/components/Post/Posts'
 
 export const getServerSideProps: GetServerSideProps = async () => {
-  const urlGuitarras = `${process.env.NEXT_PUBLIC_API_URL}/api/guitarras?populate=imagen&sort=createdAt:desc&pagination[limit]=6`
-  const urlCurso = `${process.env.NEXT_PUBLIC_API_URL}/api/curso?populate=imagen`
-  const urlPosts = `${process.env.NEXT_PUBLIC_API_URL}/api/blogs?populate=imagen&sort=createdAt:desc&pagination[limit]=3`
+  const urlGuitarras = `${process.env.apiEndpoint}/api/guitarras?populate=imagen&sort=createdAt:desc&pagination[limit]=6`
+  const urlCurso = `${process.env.apiEndpoint}/api/curso?populate=imagen`
+  const urlPosts = `${process.env.apiEndpoint}/api/blogs?populate=imagen&sort=createdAt:desc&pagination[limit]=3`
   // Para hacer multiples peticiones al mismo tiempo
   // trae los datos en el orden en el cual las declaremos, es decir, traera primero las guitarras
   const [resGuitarras, resCurso, resPosts] = await Promise.all([

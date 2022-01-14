@@ -8,7 +8,7 @@ import Navbar from './Navbar'
 import InfoGuitarra from './InfoGuitarra'
 import Animacion from './Animacion'
 
-const urlGuitarra = `${process.env.NEXT_PUBLIC_API_URL}/api/guitarras/10?populate=imagen`
+const urlGuitarra = `${process.env.apiEndpoint}/api/guitarras/10?populate=imagen`
 const fetcher = (url: string) => fetch(url).then(res => res.json())
 
 export default function Header() {

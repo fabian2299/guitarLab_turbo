@@ -5,7 +5,7 @@ import Image from 'next/image'
 import { formatearFecha } from 'src/lib'
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/blogs?populate=imagen`)
+  const res = await fetch(`${process.env.apiEndpoint}/api/blogs?populate=imagen`)
   const post = await res.json()
 
   const paths = post.data.map((post: any) => ({
@@ -20,7 +20,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const { slug } = params as any
   const res = await fetch(
-    `${process.env.NEXT_PUBLIC_API_URL}/api/blogs?filters[slug]=${slug}&populate=imagen`,
+    `${process.env.apiEndpoint}/api/blogs?filters[slug]=${slug}&populate=imagen`,
   )
   const post = await res.json()
 
@@ -28,6 +28,8 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 }
 
 export default function PostDetailsPage({ post }: any) {
+  console.log(process.env.apiEndpoint)
+
   const { contenido, imagen, publishedAt, titulo } = post.attributes
 
   return (
